@@ -99,7 +99,7 @@ public class Employee {
 		return admin_flag;
 	}
 
-	public void setAdmin_flag(Integer admim_flag) {
+	public void setAdmin_flag(Integer admin_flag) {
 		this.admin_flag = admin_flag;
 	}
 
