@@ -37,13 +37,13 @@ public class Employee {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@Column(name = "code, nullable = false, unique = true")
+	@Column(name = "code", nullable = false, unique = true)
 	private String code;
 
 	@Column(name = "name", nullable = false)
 	private String name;
 
-	@Column(name = "pasword", length = 64, nullable = false)
+	@Column(name = "password", length = 64, nullable = false)
 	private String password;
 
 	@Column(name = "admin_flag", nullable = false)
@@ -55,7 +55,7 @@ public class Employee {
 	@Column(name = "updated_at", nullable = false)
 	private Timestamp updated_at;
 
-	@Column(name = "delete_flag, nullable = false")
+	@Column(name = "delete_flag", nullable = false)
 	private Integer delete_flag;
 
 
