@@ -108,7 +108,7 @@ public class Employee {
 		return created_at;
 	}
 
-	public void setCreated(Timestamp created_at) {
+	public void setCreated_at(Timestamp created_at) {
 		this.created_at = created_at;
 	}
 
