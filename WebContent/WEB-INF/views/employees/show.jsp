@@ -29,7 +29,7 @@
 						<tr>
 							<th>登録日時</th>
 							<td>
-								<fmt:formatDate value="${ employee.created__at }" pattern="yyyy-MM-dd HH:mm:ss" />
+								<fmt:formatDate value="${ employee.created_at }" pattern="yyyy-MM-dd HH:mm:ss" />
 							</td>
 						</tr>
 						<tr>
@@ -41,7 +41,7 @@
 					</tbody>
 				</table>
 
-				<p><a href="<c:url value='/employees/edit?id=${ employee.id }' />">この従業員を編集する。</a><p>
+				<p><a href="<c:url value='/employees/edit?id=${ employee.id }' />">この従業員情報を編集する</a></p>
 			</c:when>
 			<c:otherwise>
 				<h2>お探しのデータは見つかりませんでした。</h2>
