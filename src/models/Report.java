@@ -16,12 +16,12 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Table(name = "reports")
-NamedQueries({
-	NamedQuery(
+@NamedQueries({
+	@NamedQuery(
 			name = "getAllReports",
 			query = "SELECT r FROM Report As r ORDER BY r.id DESC"
 			),
-	NamedQuery(
+	@NamedQuery(
 			name = "getReportsCount",
 			query = "SELECT COUNT(r) FROM Report AS r"
 			),
