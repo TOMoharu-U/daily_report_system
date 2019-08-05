@@ -51,13 +51,13 @@ public class LoginFilter implements Filter {
 				// ログアウトしている状態であれば
 				// ログイン画面にリダイレクト
 				if(e == null) {
-					((HttpServletResponse)request).sendRedirect(context_path + "/login");
+					((HttpServletResponse)response).sendRedirect(context_path + "/login");
 					return;
 				}
 
 				// 従業員管理の機能は管理者のみ閲覧できるようにする
 				if(servlet_path.matches("/employees.*") && e.getAdmin_flag() == 0) {
-					((HttpServletResponse)request).sendRedirect(context_path + "/");
+					((HttpServletResponse)response).sendRedirect(context_path + "/");
 					return;
 				}
 			} else {									// ログイン画面について
