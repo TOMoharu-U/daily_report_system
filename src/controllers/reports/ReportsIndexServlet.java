@@ -43,12 +43,12 @@ public class ReportsIndexServlet extends HttpServlet {
 		} catch(Exception e) {
 			page = 1;
 		}
-		List<Report> reports = em.createNamedQuery("getAllReport", Report.class)
+		List<Report> reports = em.createNamedQuery("getAllReports", Report.class)
 								.setFirstResult(15 * (page - 1))
 								.setMaxResults(15)
 								.getResultList();
 
-		long reports_count = (long)em.createNamedQuery("getAllReportsCount", Long.class )
+		long reports_count = (long)em.createNamedQuery("getReportsCount", Long.class)
 									.getSingleResult();
 
 		em.close();
@@ -61,7 +61,7 @@ public class ReportsIndexServlet extends HttpServlet {
 			request.getSession().removeAttribute("flish");
 		}
 
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/index.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/reports/index.jsp");
 		rd.forward(request, response);
 	}
 

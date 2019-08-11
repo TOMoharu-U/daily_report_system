@@ -19,19 +19,19 @@ import javax.persistence.Table;
 @NamedQueries({
 	@NamedQuery(
 			name = "getAllReports",
-			query = "SELECT r FROM Report As r ORDER BY r.id DESC"
+			query = "SELECT r FROM Report AS r ORDER BY r.id DESC"
 			),
 	@NamedQuery(
 			name = "getReportsCount",
 			query = "SELECT COUNT(r) FROM Report AS r"
 			),
 	@NamedQuery(
-			name="getMyReportAllReport",
-			query="SELECT r FROM Report AS r WHERE r.employee = :employee ORDER BY r.id DESC"
+			name = "getMyAllReports",
+			query = "SELECT r FROM Report AS r WHERE r.employee = :employee ORDER BY r.id DESC"
 			),
 	@NamedQuery(
-			name="getMyReportCount",
-			query="SELECT COUNT(r) FROM Report AS r WHERE r.employee = :employee"
+			name = "getMyReportsCount",
+			query = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :employee"
 			)
 })
 @Entity
@@ -42,7 +42,7 @@ public class Report {
 	private Integer id;
 
 	@ManyToOne
-	@JoinColumn(name = "employee_id, nullble = false")
+	@JoinColumn(name = "employee_id", nullable = false)
 	private Employee employee;
 
 	@Column(name = "report_date", nullable = false)
@@ -58,8 +58,8 @@ public class Report {
 	@Column(name = "created_at", nullable = false)
 	private Timestamp created_at;
 
-	@Column(name = "update_at", nullable = false)
-	private Timestamp update_at;
+	@Column(name = "updated_at", nullable = false)
+	private Timestamp updated_at;
 
 	public Integer getId() {
 		return id;
@@ -109,12 +109,12 @@ public class Report {
 		this.created_at = created_at;
 	}
 
-	public Timestamp getUpdate_at() {
-		return update_at;
+	public Timestamp getUpdated_at() {
+		return updated_at;
 	}
 
-	public void setUpdate_at(Timestamp update_at) {
-		this.update_at = update_at;
+	public void setUpdated_at(Timestamp updated_at) {
+		this.updated_at = updated_at;
 	}
 
 }

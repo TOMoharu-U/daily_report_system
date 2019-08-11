@@ -45,13 +45,13 @@ public class ReportsUpdateServlet extends HttpServlet {
 			r.setReport_date(Date.valueOf(request.getParameter("report_date")));
 			r.setTitle(request.getParameter("title"));
 			r.setContent(request.getParameter("content"));
-			r.setUpdate_at(new Timestamp(System.currentTimeMillis()));
+			r.setUpdated_at(new Timestamp(System.currentTimeMillis()));
 
 			List<String> errors = ReportValidator.validate(r);
 			if(errors.size() > 0) {
 				em.close();
 
-				request.setAttribute ("_token", request.getSession().getId());
+				request.setAttribute("_token", request.getSession().getId());
 				request.setAttribute("report", r);
 				request.setAttribute("errors", errors);
 
@@ -61,7 +61,7 @@ public class ReportsUpdateServlet extends HttpServlet {
 				em.getTransaction().begin();
 				em.getTransaction().commit();
 				em.close();
-				request.getSession().setAttribute("flish", "更新が完了しました。");
+				request.getSession().setAttribute("flush", "更新が完了しました。");
 
 				request.getSession().removeAttribute("report_id");
 
