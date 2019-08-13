@@ -64,7 +64,7 @@ public class ReportsCreateServlet extends HttpServlet {
 				em.close();
 
 				request.setAttribute("_token", request.getSession().getId());
-				request.setAttribute("request", r);
+				request.setAttribute("report", r);
 				request.setAttribute("errors", errors);
 
 				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/reports/new.jsp");
@@ -73,7 +73,6 @@ public class ReportsCreateServlet extends HttpServlet {
 				em.getTransaction().begin();
 				em.persist(r);
 				em.getTransaction().commit();
-
 				em.close();
 				request.getSession().setAttribute("flush", "登録が完了しました。");
 
